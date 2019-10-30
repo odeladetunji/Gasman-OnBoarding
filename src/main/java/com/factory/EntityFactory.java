@@ -1,10 +1,10 @@
 package com.factory;
 
-import com.models.User;
+import com.models.Authentication;
 
 public class EntityFactory extends AbstractFactory {
     @Override
-    public User getUser(){
-        return new User();
+    public Authentication getUser(){
+        return new Authentication();
     }
 }

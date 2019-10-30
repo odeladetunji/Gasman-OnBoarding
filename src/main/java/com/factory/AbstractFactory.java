@@ -1,7 +1,7 @@
 package com.factory;
 
-import com.models.User;
+import com.models.Authentication;
 
 public abstract class AbstractFactory  {
-    public abstract User getUser();
+    public abstract Authentication getUser();
 }

@@ -1,6 +1,6 @@
 package com.config;
 
-import com.entity.User;
+import com.entity.Authentication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 public class BeanGenerator {
 
     @Bean
-    public User aUser(){
-        return new User();
+    public Authentication aUser(){
+        return new Authentication();
     }
 
 }

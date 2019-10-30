@@ -16,11 +16,14 @@ public class User {
     @Column(name = "Id")
     public Long Id;
 
-    @JsonProperty("username")
-    public String username;
+//    @Column(name = "username")
+//    public String username;
+//
+//    @Column(name = "password")
+//    public String password;
 
-    @JsonProperty("password")
-    public String password;
+    @Column(name = "fullname")
+    public String fullname;
 
     public User(){}
 

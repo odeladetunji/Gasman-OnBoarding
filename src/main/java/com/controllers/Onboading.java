@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.models.Authentication;
 import com.models.User;
 import com.services.OnboardingServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +20,13 @@ public class Onboading {
 
     @ResponseBody
     @PostMapping(path = "/Gasman/Login")
-    public String Login(@RequestBody User payload){
+    public String Login(@RequestBody Authentication payload){
        return onboardingServiceInterface.Login(payload);
     }
 
     @ResponseBody
     @PostMapping(path = "/Gasman/Signup")
-    public String signUp(User payload){
+    public String signUp(Authentication payload){
         return onboardingServiceInterface.signUp(payload);
     }
 }

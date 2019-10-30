@@ -7,11 +7,8 @@ public class User {
     @JsonProperty("id")
     public Long Id;
 
-    @JsonProperty("username")
-    public String username;
-
-    @JsonProperty("password")
-    public String password;
+    @JsonProperty("fullname")
+    public String fullname;
 
 }
 

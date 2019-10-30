@@ -1,10 +1,10 @@
 package com.services;
 
 import com.config.BeanGenerator;
-import com.dao.UserRepository;
+import com.dao.AuthenticationRepository;
 import com.factory.AbstractFactory;
 import com.factory.ProducerFactory;
-import com.models.User;
+import com.models.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +19,11 @@ public class OnBoardingService implements OnboardingServiceInterface{
     OnboardingServiceInterface onboardingServiceInterface;
 
     @Autowired
-    UserRepository userRepository;
+    AuthenticationRepository authenticationRepository;
 
-    public BeanGenerator getEntityObj(User payload){
+    public BeanGenerator getEntityObj(Authentication payload){
         beanGenerator.aUser().password = payload.password;
-        beanGenerator.aUser().username = payload.username;
+        beanGenerator.aUser().email = payload.email;
 
         return beanGenerator;
     }
@@ -34,12 +34,12 @@ public class OnBoardingService implements OnboardingServiceInterface{
     }
 
     @Override
-    public User getUser(User payload){
-        Optional<com.entity.User> result = userRepository.findById(payload.Id);
-        User aUser = getEntity().getUser();
+    public Authentication getUser(Authentication payload){
+        Optional<com.entity.Authentication> result = authenticationRepository.findById(payload.Id);
+        Authentication aUser = getEntity().getUser();
         if (result.isPresent()) {
             aUser.password = result.get().password;
-            aUser.username = result.get().username;
+            aUser.email = result.get().email;
             return aUser;
         }
 
@@ -48,9 +48,8 @@ public class OnBoardingService implements OnboardingServiceInterface{
 
 
     @Override
-    public String Login(User payload){
-//       userRepository
-        if(getUser(payload).username == null){
+    public String Login(Authentication payload){
+        if(getUser(payload).email == null){
             return "user does not exist";
         }
 
@@ -58,10 +57,10 @@ public class OnBoardingService implements OnboardingServiceInterface{
     }
 
     @Override
-    public String signUp(User payload){
-        com.entity.User aUser = getEntityObj(payload).aUser();
+    public String signUp(Authentication payload){
+        com.entity.Authentication aUser = getEntityObj(payload).aUser();
         try{
-            userRepository.save(aUser);
+            authenticationRepository.save(aUser);
             return "successfully Signed Up";
         }catch(Exception ex){
             return "something went wrong";
