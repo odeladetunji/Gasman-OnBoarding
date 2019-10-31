@@ -16,12 +16,6 @@ public class User {
     @Column(name = "Id")
     public Long Id;
 
-//    @Column(name = "username")
-//    public String username;
-//
-//    @Column(name = "password")
-//    public String password;
-
     @Column(name = "fullname")
     public String fullname;
 

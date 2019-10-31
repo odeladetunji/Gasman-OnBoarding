@@ -1,10 +1,12 @@
 package com.controllers;
 
 import com.models.Authentication;
+import com.models.Distributors;
 import com.models.User;
 import com.services.OnboardingServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 public class Onboading {
@@ -28,5 +30,17 @@ public class Onboading {
     @PostMapping(path = "/Gasman/Signup")
     public String signUp(Authentication payload){
         return onboardingServiceInterface.signUp(payload);
+    }
+
+    @ResponseBody
+    @PostMapping(name = "/Gasman/createDistributor")
+    public String distributorRegistration(@RequestBody Distributors payload){
+        return onboardingServiceInterface.distributorRegistration(payload);
+    }
+
+    @ResponseBody
+    @PostMapping(name = "/Gasman/createUser")
+    public String userRegistration(@RequestBody User payload){
+        return onboardingServiceInterface.userRegistration(payload);
     }
 }
