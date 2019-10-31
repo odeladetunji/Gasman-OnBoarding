@@ -102,7 +102,6 @@ public class OnBoardingService implements OnboardingServiceInterface{
         }catch (Exception ex){
             return "unsuccessfull";
         }
-
     }
 
     @Override
@@ -114,5 +113,4 @@ public class OnBoardingService implements OnboardingServiceInterface{
             return "unsuccessfull";
         }
     }
-
 }
