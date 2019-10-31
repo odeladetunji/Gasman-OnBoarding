@@ -33,13 +33,13 @@ public class Onboading {
     }
 
     @ResponseBody
-    @PostMapping(name = "/Gasman/createDistributor")
+    @PostMapping(path = "/Gasman/createDistributor")
     public String distributorRegistration(@RequestBody Distributors payload){
         return onboardingServiceInterface.distributorRegistration(payload);
     }
 
     @ResponseBody
-    @PostMapping(name = "/Gasman/createUser")
+    @PostMapping(path = "/Gasman/createUser")
     public String userRegistration(@RequestBody User payload){
         return onboardingServiceInterface.userRegistration(payload);
     }

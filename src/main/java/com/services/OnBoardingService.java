@@ -11,8 +11,6 @@ import com.models.Distributors;
 import com.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import java.util.Optional;
 
 
@@ -102,7 +100,6 @@ public class OnBoardingService implements OnboardingServiceInterface{
         }catch (Exception ex){
             return "unsuccessfull";
         }
-
     }
 
     @Override
