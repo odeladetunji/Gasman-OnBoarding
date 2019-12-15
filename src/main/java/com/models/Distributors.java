@@ -2,8 +2,6 @@ package com.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Column;
-
 public class Distributors {
 
     @JsonProperty("Id")

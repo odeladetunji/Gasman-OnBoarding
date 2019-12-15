@@ -28,7 +28,7 @@ public class Onboading {
 
     @ResponseBody
     @PostMapping(path = "/Gasman/Signup")
-    public String signUp(Authentication payload){
+    public String signUp(@RequestBody Authentication payload){
         return onboardingServiceInterface.signUp(payload);
     }
 
@@ -43,4 +43,5 @@ public class Onboading {
     public String userRegistration(@RequestBody User payload){
         return onboardingServiceInterface.userRegistration(payload);
     }
+
 }
