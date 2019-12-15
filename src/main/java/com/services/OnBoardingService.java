@@ -17,6 +17,7 @@ import java.util.Optional;
 @Service
 public class OnBoardingService implements OnboardingServiceInterface{
 
+    @Autowired
     BeanGenerator beanGenerator;
 
     @Autowired
@@ -113,3 +114,41 @@ public class OnBoardingService implements OnboardingServiceInterface{
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

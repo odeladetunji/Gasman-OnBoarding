@@ -8,8 +8,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "distributors")
 public class Distributors {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Id")
     public Long Id;
 
     @Column(name = "fullname")
@@ -27,8 +29,18 @@ public class Distributors {
     @Column(name = "shop_address")
     public String shopAddress;
 
+    @Column(name = "localGovernment")
+    public String localGovernment;
+
+    @Column(name = "city_or_state")
+    public String cityStateOfDistributor;
+
     @Column(name = "location_on_map")
     public String LocationOnMap;
 
+    @OneToOne (mappedBy = "distributors")
+    public Authentication authentication;
+
     public Distributors(){}
+
 }

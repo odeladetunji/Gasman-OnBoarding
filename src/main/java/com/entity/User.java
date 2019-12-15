@@ -1,9 +1,7 @@
 package com.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Data
@@ -19,6 +17,36 @@ public class User {
     @Column(name = "fullname")
     public String fullname;
 
+    @OneToOne (mappedBy = "user")
+    public Authentication authentication;
+
     public User(){}
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
